@@ -1,0 +1,30 @@
+{% from "nationalarchives/components/secondary-navigation/macro.njk" import tnaSecondaryNavigation %}
+
+{% macro menu(path) %}
+    {{ tnaSecondaryNavigation({
+        title: "Sections",
+        headingLevel: 2,
+        items: [
+            {
+                name: "Record details",
+                href: "/",
+                current: path === "/"
+            },
+            {
+                name: "Delivery options",
+                href: "/delivery-options",
+                current: path === "/delivery-options"
+            },
+            {
+                name: "Related records",
+                href: "/related-records",
+                current: path === "/related-records"
+            },
+            {
+                name: "Stories",
+                href: "/stories",
+                current: path === "/stories"
+            }
+        ]
+    }) }}
+{% endmacro %}

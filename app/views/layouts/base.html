@@ -1,0 +1,31 @@
+{%- extends "nationalarchives/templates/prototype-kit/_base.njk" -%}
+
+{%- from "nationalarchives/components/breadcrumbs/macro.njk" import tnaBreadcrumbs -%}
+{%- from "partials/menu.njk" import menu -%}
+
+{% set theme = 'light' %}
+{% set themeAccent = 'green' %}
+
+{% block beforeContent %}
+<div class="tna-container">
+  {{ tnaBreadcrumbs({
+    items: [
+      {
+        text: 'Home',
+        href: '/'
+      }
+    ],
+    classes: 'tna-column tna-column--full tna-!--padding-vertical-s'
+  }) }}
+  <div class="tna-column tna-column--full">
+    {{ menu(path) }}
+  </div>
+</div>
+{% endblock beforeContent %}
+
+{% block footer %}
+  {{ tnaFooter({
+    themeSelector: true,
+    currentTheme: theme
+  }) | indent(4) }}
+{% endblock footer %}
