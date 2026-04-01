@@ -18,7 +18,10 @@
     classes: 'tna-column tna-column--full tna-!--padding-vertical-s'
   }) }}
   <div class="tna-column tna-column--full">
-    {{ menu(path) }}
+    <div id="menu">
+      {{ menu(path) }}
+    </div>
+    <button type="button" id="showMenu" class="tna-button tna-button--small" hidden>Dev: Show menu (currently hidden for users with JavaScript available)</button>
   </div>
 </div>
 {% endblock beforeContent %}

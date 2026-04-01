@@ -4,6 +4,17 @@
 //
 
 window.GOVUKPrototypeKit.documentReady(() => {
+  const $menu = document.getElementById('menu')
+  const $showMenu = document.getElementById('showMenu')
+  if ($menu && $showMenu) {
+    $menu.hidden = true
+    $showMenu.hidden = false
+    $showMenu.addEventListener('click', () => {
+      $menu.hidden = false
+      $showMenu.hidden = true
+    })
+  }
+
   const $deliveryOptions = document.getElementById('delivery-options')
   if ($deliveryOptions) {
     $deliveryOptions.hidden = false
