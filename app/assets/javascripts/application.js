@@ -6,7 +6,7 @@
 window.GOVUKPrototypeKit.documentReady(() => {
   const $menu = document.getElementById('menu')
   const $showMenu = document.getElementById('showMenu')
-  if ($menu && $showMenu) {
+  if ($menu && $showMenu && $menu.dataset.path === "/") {
     $menu.hidden = true
     $showMenu.hidden = false
     $showMenu.addEventListener('click', () => {
